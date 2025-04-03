@@ -1,0 +1,1 @@
+export { ContentBorder } from './ContentBorder';

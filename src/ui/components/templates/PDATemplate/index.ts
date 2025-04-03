@@ -1,0 +1,1 @@
+export { PDATemplate } from './PDATemplate';

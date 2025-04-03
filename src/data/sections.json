@@ -1,0 +1,56 @@
+[
+    {
+        "name": "Захист",
+        "route": "/pda/protects",
+        "id": "protects",
+        "categories": [
+            "armors",
+            "masks",
+            "composite",
+            "kits"
+        ]
+    },
+    {
+        "name": "Зброя",
+        "route": "/pda/weapons",
+        "id": "weapons",
+        "categories": [
+            "pistols",
+            "automatics",
+            "shotguns",
+            "explosives",
+            "snipers",
+            "mods",
+            "ammo"
+        ]
+    },
+    {
+        "name": "Зона",
+        "route": "/pda/zone",
+        "id": "zone",
+        "categories": [
+            "locations",
+            "anomalies",
+            "artefacts",
+            "detectors"
+        ]
+    },
+    {
+        "name": "Угруповання",
+        "route": "/pda/groups",
+        "id": "groups",
+        "categories": []
+    },
+    {
+        "name": "Поради",
+        "route": "/pda/advice",
+        "id": "advice",
+        "categories": []
+    },
+    {
+        "name": "Екіпіруватись",
+        "route": "/pda/equip",
+        "id": "equip",
+        "categories": []
+    }
+]
