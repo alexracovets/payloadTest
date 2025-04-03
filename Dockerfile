@@ -16,5 +16,11 @@ COPY . .
 # Відкриваємо порт
 EXPOSE 3000
 
+# Збираємо проект
+RUN npm run build
+
+# Створюємо директорію для збереження збірки
+RUN mkdir -p /app/.next
+
 # Запускаємо проект
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "start"]

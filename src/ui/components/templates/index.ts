@@ -1,3 +1,2 @@
-export { DefaultTemplate } from './DefaultTemplate';
-export { PDATemplate } from './PDATemplate';
-export { SectionTemplate } from './SectionTemplate';
+export { DefaultTemplate } from "./DefaultTemplate";
+export { SectionTemplate } from "./SectionTemplate";
