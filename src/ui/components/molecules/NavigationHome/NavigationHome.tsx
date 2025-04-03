@@ -1,28 +1,34 @@
 "use client";
 
 import Link from "next/link";
-
-import { PDAStore, SectionStore } from "@store";
+import { useEffect, useState } from "react";
 import { cn } from "@utils";
 
 export const NavigationHome = () => {
-    const sections = SectionStore(state => state.sections);
-    const setIsPlayPDA = PDAStore((state) => state.setIsPlay);
-    const setIsOpenPDA = PDAStore((state) => state.setIsOpen);
 
-    const openPDA = () => {
-        setIsOpenPDA(true);
-        setIsPlayPDA(true);
-    };
+    const [sections, setSections] = useState<{ id: string; title: string; link: string }[]>([]);
+
+    useEffect(() => {
+        const fetchPayloadData = async () => {
+            try {
+                const response = await fetch('/api/navigationHome');
+                const data = await response.json();
+                setSections(data.docs || []);
+            } catch (error) {
+                console.error('Error fetching NavigationHome data:', error);
+            }
+        };
+
+        fetchPayloadData();
+    }, []);
 
     return (
         <ul className="flex flex-col gap-y-4 w-full">
-            {sections.map((section, idx) => {
+            {sections.map((section) => {
                 return (
-                    <li key={idx}>
+                    <li key={section.id}>
                         <Link
-                            href={section.route}
-                            onClick={openPDA}
+                            href={section.link}
                             className={cn(
                                 "relative transition ease-in-out duration-300 w-full cursor-pointer flex justify-center items-center h-10 clip_startBtn",
                                 "uppercase font-roboto_condensed text-[#EBEAE8] text-3xl text-center font-[600]",
@@ -31,7 +37,7 @@ export const NavigationHome = () => {
                                 "active:after:opacity-[1] active:bg-[#EBEAE8] active:text-[#0A0A09]"
                             )}
                         >
-                            {section.name}
+                            {section.title}
                         </Link>
                     </li>
                 );
