@@ -24,7 +24,7 @@ export const NavigationHome = () => {
 
     return (
         <ul className="flex flex-col gap-y-4 w-full">
-            {sections.map((section) => {
+            {[...sections].reverse().map((section) => {
                 return (
                     <li key={section.id}>
                         <Link
