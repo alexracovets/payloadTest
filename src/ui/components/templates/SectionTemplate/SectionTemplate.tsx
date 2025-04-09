@@ -7,11 +7,11 @@ export const SectionTemplate = ({ children }: ChildrenType) => {
   return (
     <>
       <Header />
-      {/* <Main>
+      <Main>
         <Sidebar />
         <Content>{children}</Content>
-      </Main> */}
-      {/* <Footer /> */}
+      </Main>
+      <Footer />
     </>
   );
 };

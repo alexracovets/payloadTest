@@ -16,7 +16,7 @@ export const DefaultTemplate = ({ children }: ChildrenType) => {
           roboto_condensed.variable,
           roboto.variable,
           rethink.variable,
-          "antialiased flex flex-col w-full h-[100dvh] bg-black text-2xl"
+          "antialiased flex flex-col w-full h-[100dvh] bg-black"
         )}
       >
         {children}

@@ -1,5 +1,3 @@
-"use client";
-
 import { SectionTemplate } from "@components/templates";
 import { ChildrenType } from "@/types";
 

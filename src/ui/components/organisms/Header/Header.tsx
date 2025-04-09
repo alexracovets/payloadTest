@@ -7,8 +7,8 @@ export const Header = () => {
   return (
     <HeaderWrapper>
       <HeaderTopSide />
-      {/* <NavigationSection />
-      <HeaderBorder /> */}
+      <NavigationSection />
+      <HeaderBorder />
     </HeaderWrapper>
   );
 };
