@@ -1,24 +1,14 @@
-'use client';
+"use client";
 
-import { notFound } from "next/navigation";
-import { useNavigationHome } from "@/hooks/useNavigationHome";
+import { use } from "react";
 
 interface PageProps {
-  params: { sections: string };
+  params: Promise<{ sections: string }>;
 }
 
 export default function Sections({ params }: PageProps) {
-  const { sections: section } = params;
-  const { navigation, loading, error } = useNavigationHome();
+  const resolvedParams = use(params);
+  const { sections: section } = resolvedParams;
 
-  if (loading) return <div>Завантаження...</div>;
-  if (error) notFound();
-
-  const foundSection = navigation.find(
-    (item) => item.link === `/${section}`
-  );
-
-  if (!foundSection) notFound();
-
-  return <h1 className="text-white">{foundSection.title}</h1>;
+  return <h1 className="text-white">{section}</h1>;
 }

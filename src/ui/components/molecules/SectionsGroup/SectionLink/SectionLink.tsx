@@ -13,34 +13,30 @@ export interface SectionLinkType {
   setActiveSection: (e: MouseEvent<HTMLAnchorElement>) => void;
 }
 
-export const SectionLink = memo(({
-  route,
-  id,
-  name,
-  currentSection,
-  setActiveSection,
-}: SectionLinkType) => {
-  return (
-    <li>
-      <Link 
-        id={id} 
-        href={route} 
-        onMouseEnter={(e) => setActiveSection(e)}
-        prefetch={true}
-      >
-        <Text
-          variant="navigationSection"
-          className={cn(
-            "hover:font-[500] hover:text-active_white",
-            currentSection === id ? "text-active_white" : "text-dark_white"
-          )}
-          asChild="span"
+export const SectionLink = memo(
+  ({ route, id, name, currentSection, setActiveSection }: SectionLinkType) => {
+    return (
+      <li>
+        <Link
+          id={id}
+          href={route}
+          onMouseEnter={(e) => setActiveSection(e)}
+          prefetch={true}
         >
-          {name}
-        </Text>
-      </Link>
-    </li>
-  );
-});
+          <Text
+            variant="navigationSection"
+            className={cn(
+              "hover:font-[500] hover:text-active_white",
+              currentSection === id ? "text-active_white" : "text-dark_white"
+            )}
+            asChild="span"
+          >
+            {name}
+          </Text>
+        </Link>
+      </li>
+    );
+  }
+);
 
-SectionLink.displayName = 'SectionLink';
+SectionLink.displayName = "SectionLink";

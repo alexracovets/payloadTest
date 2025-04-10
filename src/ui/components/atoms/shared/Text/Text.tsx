@@ -21,6 +21,9 @@ const textVariants = cva("font-montserrat", {
       subHomeLogo: cn(
         "font-calibri text-center uppercase text-[2.2rem] text-[#9E9D98] tracking-[1.3rem]"
       ),
+      homeLink: cn(
+        "uppercase font-roboto_condensed text-light_gray text-[3.2rem] text-center font-[600]"
+      ),
       info: cn(
         "uppercase font-roboto_condensed text-[2.8rem] text-light_white font-[600]"
       ),

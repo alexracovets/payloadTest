@@ -1,0 +1,1 @@
+export { NavHomeLink } from "./NavHomeLink";

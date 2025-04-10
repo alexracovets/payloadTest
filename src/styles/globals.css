@@ -9,10 +9,12 @@
 
   --color-light_white: #a8a3a0;
   --color-dark_white: #7b7b7a;
+  --color-light_gray: #ebeae8;
   --color-active_white: #bfbcb7;
   --color-border: #403e3c;
   --color-light_black: #1d1c1a;
   --color-black: #11100e;
+  --color-black_secondary: #0a0a09;
 }
 .clip_startBtn {
   clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
