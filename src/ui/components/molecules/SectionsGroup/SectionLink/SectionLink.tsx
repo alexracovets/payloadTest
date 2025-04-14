@@ -1,26 +1,26 @@
 "use client";
 
 import Link from "next/link";
-import { MouseEvent, memo } from "react";
+import { memo } from "react";
 import { cn } from "@utils";
-import { Text } from "@/ui/components/atoms";
+import { Text } from "@components/atoms";
 
 export interface SectionLinkType {
   route: string;
   id: string;
   name: string;
-  currentSection: string;
-  setActiveSection: (e: MouseEvent<HTMLAnchorElement>) => void;
+  currentSection: string | null;
+  setDashActive: (section: string | null) => void;
 }
 
 export const SectionLink = memo(
-  ({ route, id, name, currentSection, setActiveSection }: SectionLinkType) => {
+  ({ route, id, name, currentSection, setDashActive }: SectionLinkType) => {
     return (
       <li>
         <Link
           id={id}
           href={route}
-          onMouseEnter={(e) => setActiveSection(e)}
+          onMouseEnter={() => setDashActive(id)}
           prefetch={true}
         >
           <Text

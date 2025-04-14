@@ -1,16 +1,10 @@
 "use client";
 
-import { usePayloadData } from "@/hooks";
 import { NavHomeLink } from "./NavHomeLink";
-
-interface SectionType {
-  id: string;
-  name: string;
-  link: string;
-}
+import { useNavigationStore } from "@/store";
 
 export const NavigationHome = () => {
-  const sections = usePayloadData<SectionType>("/api/sections");
+  const sections = useNavigationStore((state) => state.sections);
 
   return (
     <ul className="flex flex-col gap-y-4 w-full">

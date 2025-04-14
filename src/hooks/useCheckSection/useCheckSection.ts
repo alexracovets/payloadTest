@@ -1,31 +1,26 @@
 "use client";
 
-import { SectionStore } from '@store';
-import { usePathname } from 'next/navigation'
-import { useCallback, useEffect } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect } from "react";
+
+import { useNavigationStore } from "@store";
 
 export const useCheckSection = () => {
-    const setCurrentSection = SectionStore((state) => state.setCurrentSection);
-    const setCurrentCategories = SectionStore((state) => state.setCurrentCategories);
-    const sections = SectionStore((state) => state.sections);
-    const currentPath = usePathname();
+  const currentPath = usePathname();
+  const setCurrentSection = useNavigationStore(
+    (state) => state.setCurrentSection
+  );
 
-    const setCategories = useCallback(() => {
-        const currentSection = sections.find((section) => section.route === currentPath);
-        setCurrentCategories(currentSection ? currentSection.categories : []);
-    }, [sections, currentPath]);
+  useEffect(() => {
+    if (!currentPath) return;
 
-    useEffect(() => {
-        if (!currentPath) return;
+    const sectionMatch = currentPath.match(/^\/[^\/]+\/([^\/]+)/);
+    const section = sectionMatch ? sectionMatch[1] : null;
 
-        const sectionMatch = currentPath.match(/^\/[^\/]+\/([^\/]+)/);
-        const section = sectionMatch ? sectionMatch[1] : null;
+    if (section) {
+      setCurrentSection(section);
+    }
+  }, [currentPath, setCurrentSection]);
 
-        if (section) {
-            setCurrentSection(section);
-            setCategories();
-        }
-    }, [currentPath, setCurrentSection]);
-
-    return null;
+  return null;
 };

@@ -3,6 +3,7 @@
 import { calibri, stalker, roboto, roboto_condensed, rethink } from "@fonts";
 import { ChildrenType } from "@/types";
 import { cn } from "@utils";
+import { Loader } from "@components/organisms";
 
 import "@styles/globals.css";
 
@@ -19,6 +20,7 @@ export const DefaultTemplate = ({ children }: ChildrenType) => {
           "antialiased flex flex-col w-full h-[100dvh] bg-black"
         )}
       >
+        <Loader />
         {children}
       </body>
     </html>

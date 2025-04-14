@@ -16,9 +16,20 @@
   --color-black: #11100e;
   --color-black_secondary: #0a0a09;
 }
+
 .clip_startBtn {
   clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
 }
+
+.bg-custom-gradient {
+  background: linear-gradient(to top, #898883, #BFBFBA, #C9C2B2, #BFBFBA, #898883);
+}
+
+.bg-custom-gradient_second {
+  background: linear-gradient(to top, #837f7c, #c9c2b2, #c9c2b2, #837f7c);
+}
+
+
 * {
   box-sizing: border-box;
 }

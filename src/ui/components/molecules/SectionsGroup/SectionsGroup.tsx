@@ -1,47 +1,37 @@
 "use client";
 
-import { useRef, useEffect } from "react";
-import { useNavDash, usePayloadData } from "@hooks";
-import { SectionStore } from "@store";
+import { useRef, RefObject } from "react";
+import { SectionsDash } from "@components/molecules";
 import { SectionLink } from "./SectionLink/SectionLink";
+import { useDashPositions } from "@/hooks";
 
-interface SectionType {
-  id: string;
-  name: string;
-  link: string;
-}
+import { useNavigationStore } from "@store";
 
 export const SectionsGroup = () => {
   const menuRef = useRef<HTMLDivElement>(null);
-  const { setActiveSection, setCurrentSection } = useNavDash({
-    menuRef: menuRef as React.RefObject<HTMLDivElement>,
-  });
-  const currentSection = SectionStore((state) => state.currentSection);
-  const sections = usePayloadData<SectionType>("/api/sections");
-
-  useEffect(() => {
-    setCurrentSection();
-  }, [setCurrentSection]);
+  const { sections, currentSection, setDashActive } = useNavigationStore();
+  useDashPositions({ menuRef: menuRef as RefObject<HTMLDivElement> });
 
   return (
     <nav className="h-full relative" ref={menuRef}>
       <ul
-        onMouseLeave={() => setCurrentSection()}
+        onMouseLeave={() => setDashActive(currentSection)}
         className="flex justify-center items-center gap-x-[8rem]"
       >
-        {sections.map((section, idx) => {
+        {sections.map((section) => {
           return (
             <SectionLink
-              key={idx}
+              key={section.id}
               route={section.link}
-              id={section.id}
+              id={section.link}
               name={section.name}
               currentSection={currentSection}
-              setActiveSection={setActiveSection}
+              setDashActive={setDashActive}
             />
           );
         })}
       </ul>
+      <SectionsDash />
     </nav>
   );
 };
