@@ -1,0 +1,1 @@
+export { AutomaticsIco } from "./AutomaticsIco";

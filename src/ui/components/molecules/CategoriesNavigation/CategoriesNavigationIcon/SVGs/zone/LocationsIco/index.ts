@@ -1,0 +1,1 @@
+export { LocationsIco } from './LocationsIco';

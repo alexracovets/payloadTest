@@ -1,0 +1,1 @@
+export { СompositeIcon } from "./СompositeIcon";

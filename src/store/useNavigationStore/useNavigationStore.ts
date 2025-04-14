@@ -7,12 +7,20 @@ interface SectionType {
   link: string;
 }
 
+interface CategoryType {
+  id: string;
+  name: string;
+  link: string;
+}
+
 interface NavigationStoreType {
   sections: SectionType[];
+  categories: CategoryType[];
   currentSection: string | null;
   dashActive: string | null;
   dashPosition: { left: number; width: number };
   setSections: (sections: SectionType[]) => void;
+  setCategories: (categories: CategoryType[]) => void;
   setCurrentSection: (section: string | null) => void;
   setDashActive: (active: string | null) => void;
   setDashPosition: (position: { left: number; width: number }) => void;
@@ -21,6 +29,7 @@ interface NavigationStoreType {
 export const useNavigationStore = create<NavigationStoreType>()(
   immer((set) => ({
     sections: [],
+    categories: [],
     currentSection: null,
     dashActive: null,
     dashPosition: {
@@ -28,6 +37,7 @@ export const useNavigationStore = create<NavigationStoreType>()(
       width: 0,
     },
     setSections: (sections: SectionType[]) => set({ sections }),
+    setCategories: (categories: CategoryType[]) => set({ categories }),
     setCurrentSection: (section: string | null) =>
       set({ currentSection: section, dashActive: section }),
     setDashActive: (active: string | null) => set({ dashActive: active }),

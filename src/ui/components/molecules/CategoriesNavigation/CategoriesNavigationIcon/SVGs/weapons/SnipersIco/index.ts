@@ -1,0 +1,1 @@
+export { SnipersIco } from "./SnipersIco";

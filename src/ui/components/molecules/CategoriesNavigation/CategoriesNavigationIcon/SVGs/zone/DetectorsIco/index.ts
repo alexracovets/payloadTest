@@ -1,0 +1,1 @@
+export { DetectorsIco } from './DetectorsIco';

@@ -1,0 +1,1 @@
+export { AmmoIco } from './AmmoIco';
