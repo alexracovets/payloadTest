@@ -17,7 +17,7 @@ const buttonVariants = cva(
         outline: "",
         secondary: "",
         filter: cn(
-          "relative text-[2.5rem] text-nowrap flex flex-nowrap justify-center items-center text-pda-destructive font-roboto_condensed px-[1.2rem] pl-[4.4rem] py-[.8rem] rounded-[.4rem] bg-pda-gray border-[.1rem] border-pda-border",
+          "relative text-[2.5rem] text-nowrap flex flex-nowrap justify-center items-center text-destructive font-roboto_condensed px-[1.2rem] pl-[4.4rem] py-[.8rem] rounded-[.4rem] bg-gray border-[.1rem] border-border",
           "before:content-[''] before:absolute before:left-[1.2rem] before:top-[1.6rem] before:bg-[url(/svg/filter.svg)] before:bg-cover before:w-[2.4rem] before:h-[2.4rem]"
         ),
         link: "",

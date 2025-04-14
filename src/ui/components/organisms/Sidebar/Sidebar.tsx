@@ -1,6 +1,7 @@
 "use cleint";
 
 import { AtomImage, SidebarWrapper } from "@components/atoms";
+import { SearchPages } from "@components/molecules";
 // import { SearchPages, SidebarNavigation, CategoriesFill } from "@components/molecules";
 
 export const Sidebar = () => {
@@ -24,7 +25,8 @@ export const Sidebar = () => {
           className="h-full w-[.9rem]"
         />
       </div>
-      {/* <SearchPages />
+      <SearchPages />
+      {/* 
             <SidebarNavigation />
             <CategoriesFill /> */}
     </SidebarWrapper>

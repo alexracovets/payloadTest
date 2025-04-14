@@ -1,4 +1,4 @@
-export { HomeLogo, Text, HomeVideo, Button, AtomImage } from "./shared";
+export { HomeLogo, Text, HomeVideo, Button, AtomImage, Input } from "./shared";
 export {
   MainWrapper,
   SidebarWrapper,

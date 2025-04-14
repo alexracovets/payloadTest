@@ -6,3 +6,4 @@ export { Timer } from "./Timer";
 export { ButtonKeyUp } from "./ButtonKeyUp";
 export { SectionsGroup } from "./SectionsGroup";
 export { SectionsDash } from "./SectionsDash";
+export { SearchPages } from "./SearchPages";
