@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
-import { cn } from "@utils";
+import { AtomImage } from "@components/atoms";
 import { useNavigationStore } from "@store";
+import { cn } from "@utils";
 
 export const SectionsDash = () => {
   const { dashActive, dashPosition } = useNavigationStore();
@@ -21,16 +21,14 @@ export const SectionsDash = () => {
         style={dashPosition.bigLine}
       >
         <div className="relative w-full h-full flex justify-center items-end">
-          <div className="relative w-[8.5rem] h-[2.5rem]">
-            <Image
-              src="/pda/line_dot.png"
-              fill
-              alt="dot"
-              sizes="100%"
-              priority
-              className="object-cover"
-            />
-          </div>
+          <AtomImage
+            src="/pda/line_dot.png"
+            alt="dot"
+            sizes="100%"
+            priority
+            fill
+            className="w-[8.5rem] h-[2.5rem]"
+          />
         </div>
       </div>
       <div
@@ -38,16 +36,14 @@ export const SectionsDash = () => {
         style={dashPosition.smallLine}
       >
         <div className="relative w-full h-full flex justify-center items-end">
-          <div className="relative w-[4.4rem] h-[1.7rem] blur-[1rem]">
-            <Image
-              src="/pda/line_dot_small.png"
-              fill
-              alt="dot"
-              sizes="100%"
-              priority
-              className="object-cover"
-            />
-          </div>
+          <AtomImage
+            src="/pda/line_dot_small.png"
+            alt="dot"
+            sizes="100%"
+            priority
+            fill
+            className="w-[4.4rem] h-[1.7rem] blur-[1rem]"
+          />
         </div>
       </div>
     </div>

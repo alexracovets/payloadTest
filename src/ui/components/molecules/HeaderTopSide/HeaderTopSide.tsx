@@ -1,13 +1,20 @@
 "use client";
 
-import { HeaderPlug, HeaderTopWrapper } from "@components/atoms";
+import { AtomImage, HeaderTopWrapper } from "@components/atoms";
 import { Internet, Timer } from "@components/molecules";
 
 export const HeaderTopSide = () => {
   return (
     <HeaderTopWrapper>
       <Internet />
-      <HeaderPlug />
+      <AtomImage
+        src="/pda/plug.png"
+        alt="plug"
+        sizes="100%"
+        priority
+        fill
+        className="w-[85.78125vw] min-w-[85.78125vw] h-[2.135416666666667vw] pointer-events-none"
+      />
       <Timer />
     </HeaderTopWrapper>
   );

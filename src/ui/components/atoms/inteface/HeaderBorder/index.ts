@@ -1,1 +1,0 @@
-export { HeaderBorder } from './HeaderBorder';
