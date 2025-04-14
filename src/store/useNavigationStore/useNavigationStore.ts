@@ -11,17 +11,11 @@ interface NavigationStoreType {
   sections: SectionType[];
   currentSection: string | null;
   dashActive: string | null;
-  dashPosition: {
-    bigLine: { left: string; width: string };
-    smallLine: { left: string; width: string };
-  };
+  dashPosition: { left: number; width: number };
   setSections: (sections: SectionType[]) => void;
   setCurrentSection: (section: string | null) => void;
   setDashActive: (active: string | null) => void;
-  setDashPosition: (position: {
-    bigLine: { left: string; width: string };
-    smallLine: { left: string; width: string };
-  }) => void;
+  setDashPosition: (position: { left: number; width: number }) => void;
 }
 
 export const useNavigationStore = create<NavigationStoreType>()(
@@ -30,16 +24,14 @@ export const useNavigationStore = create<NavigationStoreType>()(
     currentSection: null,
     dashActive: null,
     dashPosition: {
-      bigLine: { left: "0px", width: "0px" },
-      smallLine: { left: "0px", width: "0px" },
+      left: 0,
+      width: 0,
     },
     setSections: (sections: SectionType[]) => set({ sections }),
     setCurrentSection: (section: string | null) =>
       set({ currentSection: section, dashActive: section }),
     setDashActive: (active: string | null) => set({ dashActive: active }),
-    setDashPosition: (position: {
-      bigLine: { left: string; width: string };
-      smallLine: { left: string; width: string };
-    }) => set({ dashPosition: position }),
+    setDashPosition: (position: { left: number; width: number }) =>
+      set({ dashPosition: position }),
   }))
 );

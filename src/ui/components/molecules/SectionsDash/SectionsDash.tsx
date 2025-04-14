@@ -18,7 +18,10 @@ export const SectionsDash = () => {
         className={cn(
           "absolute bottom-[0] h-[.15rem] bg-custom-gradient transition-all ease-out duration-300 flex justify-center items-center"
         )}
-        style={dashPosition.bigLine}
+        style={{
+          left: `${dashPosition.left}px`,
+          width: `${dashPosition.width}px`,
+        }}
       >
         <div className="relative w-full h-full flex justify-center items-end">
           <AtomImage
@@ -33,7 +36,10 @@ export const SectionsDash = () => {
       </div>
       <div
         className="absolute bottom-[.15rem] h-[.3rem] bg-custom-gradient_second transition-all ease-out duration-300 flex justify-center items-center"
-        style={dashPosition.smallLine}
+        style={{
+          left: `${dashPosition.left + dashPosition.width / 4}px`,
+          width: `${dashPosition.width / 2}px`,
+        }}
       >
         <div className="relative w-full h-full flex justify-center items-end">
           <AtomImage

@@ -2,18 +2,20 @@
 @import "tw-animate-css";
 
 @theme {
+  --font-roboto_condensed: "Roboto Condensed", sans-serif;
+  --font-rethink: "Rethink Sans", sans-serif;
   --font-stalker: "Stalker", sans-serif;
   --font-calibri: "Calibri", sans-serif;
-  --font-roboto_condensed: "Roboto Condensed", sans-serif;
-  --font-roboto: "Roboto";
+  --font-roboto: "Roboto", sans-serif;
 
-  --color-light_white: #a8a3a0;
+  --color-black: #11100e;
+  --color-border: #403e3c;
   --color-dark_white: #7b7b7a;
   --color-light_gray: #ebeae8;
-  --color-active_white: #bfbcb7;
-  --color-border: #403e3c;
   --color-light_black: #1d1c1a;
-  --color-black: #11100e;
+  --color-light_white: #a8a3a0;
+  --color-destructive: #c9c2b2;
+  --color-active_white: #bfbcb7;
   --color-black_secondary: #0a0a09;
 }
 
@@ -22,13 +24,19 @@
 }
 
 .bg-custom-gradient {
-  background: linear-gradient(to top, #898883, #BFBFBA, #C9C2B2, #BFBFBA, #898883);
+  background: linear-gradient(
+    to top,
+    #898883,
+    #bfbfba,
+    #c9c2b2,
+    #bfbfba,
+    #898883
+  );
 }
 
 .bg-custom-gradient_second {
   background: linear-gradient(to top, #837f7c, #c9c2b2, #c9c2b2, #837f7c);
 }
-
 
 * {
   box-sizing: border-box;

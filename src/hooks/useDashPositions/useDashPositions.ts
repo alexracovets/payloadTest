@@ -22,18 +22,10 @@ export const useDashPositions = ({ menuRef }: DashPositionsType) => {
 
       const dashPosition = dash.getBoundingClientRect();
       const menuRect = menuRef.current.getBoundingClientRect();
-      const spanRect = dash.querySelector("span")?.getBoundingClientRect();
 
-      if (!spanRect) return;
       setDashPosition({
-        bigLine: {
-          left: `${dashPosition.left - menuRect.left}px`,
-          width: `${dashPosition.width}px`,
-        },
-        smallLine: {
-          left: `${spanRect.left - menuRect.left}px`,
-          width: `${spanRect.width}px`,
-        },
+        left: dashPosition.left - menuRect.left,
+        width: dashPosition.width,
       });
     };
 
