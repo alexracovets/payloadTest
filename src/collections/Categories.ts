@@ -1,5 +1,4 @@
-import type { CollectionConfig } from "payload";
-import { Sections } from "./Sections";
+import type { CollectionConfig, CollectionSlug } from "payload";
 
 export const Categories: CollectionConfig = {
   slug: "categories",
@@ -26,7 +25,7 @@ export const Categories: CollectionConfig = {
     {
       name: "section",
       type: "relationship",
-      relationTo: "sections" as const,
+      relationTo: "sections" as CollectionSlug,
       required: true,
       label: "Section",
       admin: {
