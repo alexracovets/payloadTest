@@ -7,14 +7,14 @@ import { cn } from "@utils";
 interface NavHomeLinkProps {
   section: {
     name: string;
-    link: string;
+    fullSlug: string;
   };
 }
 
 export const NavHomeLink = ({ section }: NavHomeLinkProps) => {
   return (
     <li>
-      <Link href={`pda/${section.link}`}>
+      <Link href={`pda/${section.fullSlug}`}>
         <Text
           variant="homeLink"
           className={cn(

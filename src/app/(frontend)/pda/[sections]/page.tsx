@@ -1,6 +1,6 @@
 "use client";
 
-import { use } from "react";
+import { use, useEffect, useState } from "react";
 import { usePayloadData } from "@hooks";
 import { SectionLayout } from "@components/templates";
 
@@ -10,24 +10,32 @@ interface PageProps {
 
 interface SectionType {
   id: string;
+  fullSlug: string;
   name: string;
-  link: string;
   subtitle: string;
+  link: string;
   categories: {
     id: string;
     name: string;
     link: string;
   }[];
+  updatedAt: string;
+  createdAt: string;
 }
 
 export default function Sections({ params }: PageProps) {
-  const { sections: section } = use(params);
-  const sections = usePayloadData<SectionType>("/api/sections");
-  const sectionPage = sections.find((s) => s.link === section);
+  const { sections: slug } = use(params);
 
-  if (!sectionPage) {
-    return <h1 className="text-white">Section not found</h1>;
-  }
+  const test = () => {
+    const sections = usePayloadData<SectionType>(`/api/sections`);
+    const test = sections.find((s) => s.fullSlug === slug);
+    const sectionId = test?.id || "";
+    const sectionData = usePayloadData<SectionType>(
+      `/api/sections/${sectionId}`
+    );
+    return sectionData[0];
+  };
+  const [sectionData, setSectionData] = useState<SectionType | null>(test());
 
-  return <SectionLayout data={sectionPage} />;
+  return <>{sectionData && <SectionLayout data={sectionData} />}</>;
 }

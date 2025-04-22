@@ -1,15 +1,20 @@
-import type { CollectionConfig, CollectionSlug } from "payload";
+import type { CollectionConfig } from "payload";
 
 export const Sections: CollectionConfig = {
   slug: "sections",
   admin: {
     useAsTitle: "name",
   },
-  defaultSort: "order",
-  access: {
-    read: () => true,
-  },
   fields: [
+    {
+      name: "fullSlug",
+      type: "text",
+      required: true,
+      label: "Slug",
+      admin: {
+        position: "sidebar",
+      },
+    },
     {
       name: "name",
       type: "text",
@@ -21,22 +26,6 @@ export const Sections: CollectionConfig = {
       type: "text",
       required: true,
       label: "Subtitle",
-    },
-    {
-      name: "link",
-      type: "text",
-      required: true,
-      label: "Path name",
-    },
-    {
-      name: "categories",
-      type: "relationship",
-      relationTo: "categories" as CollectionSlug,
-      hasMany: true,
-      admin: {
-        position: "sidebar",
-        readOnly: true,
-      },
     },
   ],
 };

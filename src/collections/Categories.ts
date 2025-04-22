@@ -1,15 +1,44 @@
-import type { CollectionConfig, CollectionSlug } from "payload";
+import {
+  getPayload,
+  type CollectionConfig,
+  type CollectionSlug,
+  type Payload,
+  type TypeWithID,
+} from "payload";
+import config from "../payload.config";
+
+type Section = TypeWithID & {
+  fullSlug: string;
+  name: string;
+  subtitle: string;
+};
+
+type PayloadWithSections = Payload & {
+  findByID(args: { collection: "sections"; id: string }): Promise<Section>;
+};
 
 export const Categories: CollectionConfig = {
   slug: "categories",
   admin: {
     useAsTitle: "name",
   },
-  defaultSort: "order",
-  access: {
-    read: () => true,
-  },
   fields: [
+    {
+      name: "slug",
+      type: "text",
+      required: true,
+      label: "Slug",
+      admin: {
+        position: "sidebar",
+      },
+    },
+    {
+      name: "fullSlug",
+      type: "text",
+      admin: {
+        hidden: true,
+      },
+    },
     {
       name: "name",
       type: "text",
@@ -17,21 +46,32 @@ export const Categories: CollectionConfig = {
       label: "Name",
     },
     {
-      name: "link",
-      type: "text",
-      required: true,
-      label: "Path name",
-    },
-    {
-      name: "section",
+      name: "parent",
       type: "relationship",
       relationTo: "sections" as CollectionSlug,
-      required: false,
       label: "Section",
+      hasMany: false,
       admin: {
         position: "sidebar",
       },
-      hasMany: true,
     },
   ],
+  hooks: {
+    beforeChange: [
+      async ({ data }) => {
+        const payload = (await getPayload({ config })) as PayloadWithSections;
+        const parentPage = await payload.findByID({
+          collection: "sections",
+          id: data.parent,
+        });
+
+        if (parentPage) {
+          data.fullSlug = `${parentPage.fullSlug}/${data.slug}`;
+        } else {
+          data.fullSlug = data.slug;
+        }
+        return data;
+      },
+    ],
+  },
 };
