@@ -1,41 +1,47 @@
 "use client";
 
-import { use, useEffect, useState } from "react";
-import { usePayloadData } from "@hooks";
-import { SectionLayout } from "@components/templates";
+import { useEffect, useState } from "react";
+
+interface SectionType {
+  id: number;
+  fullSlug: string;
+  name: string;
+  subtitle: string;
+  updatedAt: string;
+  createdAt: string;
+}
 
 interface PageProps {
   params: Promise<{ sections: string }>;
 }
 
-interface SectionType {
-  id: string;
-  fullSlug: string;
-  name: string;
-  subtitle: string;
-  link: string;
-  categories: {
-    id: string;
-    name: string;
-    link: string;
-  }[];
-  updatedAt: string;
-  createdAt: string;
-}
-
 export default function Sections({ params }: PageProps) {
-  const { sections: slug } = use(params);
+  const [section, setSection] = useState<SectionType | null>(null);
 
-  const test = () => {
-    const sections = usePayloadData<SectionType>(`/api/sections`);
-    const test = sections.find((s) => s.fullSlug === slug);
-    const sectionId = test?.id || "";
-    const sectionData = usePayloadData<SectionType>(
-      `/api/sections/${sectionId}`
-    );
-    return sectionData[0];
-  };
-  const [sectionData, setSectionData] = useState<SectionType | null>(test());
+  useEffect(() => {
+    const fetchSection = async () => {
+      const { sections } = await params;
 
-  return <>{sectionData && <SectionLayout data={sectionData} />}</>;
+      const res = await fetch(
+        `/api/sections?where[fullSlug][equals]=${sections}`
+      );
+      const data = await res.json();
+
+      if (data?.docs?.length > 0) {
+        setSection(data.docs[0]);
+      }
+    };
+
+    fetchSection();
+  }, [params]);
+
+  if (!section) return <div>Завантаження...</div>;
+
+  return (
+    <div>
+      <h1>{section.name}</h1>
+      <p>{section.subtitle}</p>
+      <small>Оновлено: {new Date(section.updatedAt).toLocaleString()}</small>
+    </div>
+  );
 }

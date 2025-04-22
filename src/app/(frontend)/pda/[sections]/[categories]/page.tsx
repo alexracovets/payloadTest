@@ -1,30 +1,47 @@
 "use client";
 
-import { use } from "react";
-import { usePayloadData } from "@hooks";
-import { SectionLayout } from "@components/templates";
+import { useEffect, useState } from "react";
 
-interface CategoryProps {
-  params: Promise<{ categories: string }>;
-}
-
-interface SectionType {
-  id: string;
+interface CategoryType {
+  id: number;
+  fullSlug: string;
   name: string;
-  link: string;
+  subtitle: string;
+  updatedAt: string;
+  createdAt: string;
 }
 
-export default function Categories({ params }: CategoryProps) {
-  const { categories: category } = use(params);
-  const categories = usePayloadData<SectionType>("/api/categories");
-  const categoryPage = categories.find((s) => s.link === category);
+interface PageProps {
+  params: Promise<{ sections: string; categories: string }>;
+}
+
+export default function Categories({ params }: PageProps) {
+  const [section, setSection] = useState<CategoryType | null>(null);
+
+  useEffect(() => {
+    const fetchSection = async () => {
+      const { sections, categories } = await params;
+      console.log(sections, categories)
+      const res = await fetch(
+        `/api/categories?where[fullSlug][equals]=${sections}/${categories}`
+      );
+      const data = await res.json();
+
+      if (data?.docs?.length > 0) {
+        setSection(data.docs[0]);
+      }
+    };
+
+    fetchSection();
+  }, [params]);
+
+  if (!section) return <div>Завантаження...</div>;
+
   return (
-    <>
-      {categoryPage ? (
-        <SectionLayout data={categoryPage} />
-      ) : (
-        <h1 className="text-white">Category not found</h1>
-      )}
-    </>
+    <div>
+      <h1>{section.name}</h1>
+      <p>{section.subtitle}</p>
+      <small>Оновлено: {new Date(section.updatedAt).toLocaleString()}</small>
+    </div>
   );
 }
