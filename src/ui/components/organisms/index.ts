@@ -5,3 +5,4 @@ export { Main } from "./Main";
 export { Sidebar } from "./Sidebar";
 export { Content } from "./Content";
 export { Loader } from "./Loader";
+export { CategoriesLists } from "./CategoriesLists";

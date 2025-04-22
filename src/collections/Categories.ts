@@ -26,11 +26,12 @@ export const Categories: CollectionConfig = {
       name: "section",
       type: "relationship",
       relationTo: "sections" as CollectionSlug,
-      required: true,
+      required: false,
       label: "Section",
       admin: {
         position: "sidebar",
       },
+      hasMany: true,
     },
   ],
 };

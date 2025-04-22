@@ -34,6 +34,12 @@ const textVariants = cva("font-montserrat", {
       navigationSection: cn(
         "block text-[2.5rem] font-roboto_condensed py-[3.2rem] px-[3rem] cursor-pointer leading-none"
       ),
+      pageTitle: cn(
+        "text-[34px] font-roboto_condensed text-warm-sand font-[500]"
+      ),
+      pageSubTitle: cn(
+        "text-[18px] font-roboto text-toxic font-[500]"
+      ),
     },
   },
   defaultVariants: {

@@ -6,4 +6,5 @@ export {
   HeaderWrapper,
   HeaderTopWrapper,
   NavigationWrapper,
+  Container,
 } from "./inteface";

@@ -22,7 +22,7 @@ export const SectionsGroup = () => {
           return (
             <SectionLink
               key={section.id}
-              route={section.link}
+              route={`/pda/${section.link}`}
               id={section.link}
               name={section.name}
               currentSection={currentSection}
