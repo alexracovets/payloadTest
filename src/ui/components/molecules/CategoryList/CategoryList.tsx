@@ -3,19 +3,27 @@
 import { cn } from "@/utils";
 import Link from "next/link";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent, AtomImage } from "@components/atoms";
-
-
+import { CategoryIcon } from "@components/molecules";
 
 interface CategoryListProps {
   list: {
     name: string;
     fullSlug: string;
+    icon: {
+      url: string;
+      alt: string;
+    };
+    icon_mask: {
+      url: string;
+      alt: string;
+    };
     activeElements: {
       name: string;
       fullSlug: string;
     }[];
   };
 }
+
 export const CategoryList = ({ list }: CategoryListProps) => {
 
   return (
@@ -24,16 +32,15 @@ export const CategoryList = ({ list }: CategoryListProps) => {
         <AccordionItem value="item-1">
           <AccordionTrigger className="flex justify-between items-center p-[16px] cursor-pointer">
             <Link href={`/pda/${list.fullSlug}`}
-              onMouseEnter={(e) => e.preventDefault()}
               className={cn(
-                'text-[#CABFB0] font-[500] text-[26px] font-roboto_condensed h-full flex justify-start items-center underline-none hover:underline',
+                "text-[#CABFB0] font-[500] text-[26px] font-roboto_condensed h-full flex justify-start items-center underline-none hover:underline",
+                "hover:text-toxic_secondary transition-colors duration-300",
+                "group"
               )}
             >
-              <AtomImage
-                src={list.icon.url}
-                alt={list.icon.alt}
-                fill
-                className="w-[56px] h-[56px] mr-[16px]"
+              <CategoryIcon
+                icon={list.icon}
+                icon_mask={list.icon_mask}
               />
               {list.name}
             </Link>
@@ -64,7 +71,6 @@ export const CategoryList = ({ list }: CategoryListProps) => {
           </AccordionContent>
         </AccordionItem>
       </Accordion>
-
     </div>
   );
 };

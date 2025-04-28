@@ -40,6 +40,9 @@ const textVariants = cva("font-montserrat", {
       pageSubTitle: cn(
         "text-[18px] font-roboto text-toxic font-[500]"
       ),
+      elementGrid: cn(
+        "text-center text-[20px] font-roboto text-light_white font-[500] underline"
+      ),
     },
   },
   defaultVariants: {

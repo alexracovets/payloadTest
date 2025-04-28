@@ -24,15 +24,6 @@ export const Categories: CollectionConfig = {
   },
   fields: [
     {
-      name: "slug",
-      type: "text",
-      required: true,
-      label: "Slug",
-      admin: {
-        position: "sidebar",
-      },
-    },
-    {
       name: "fullSlug",
       type: "text",
       admin: {
@@ -46,10 +37,31 @@ export const Categories: CollectionConfig = {
       label: "Name",
     },
     {
+      name: "subtitle",
+      type: "text",
+      required: true,
+      label: "Subtitle",
+    },
+    {
       name: "icon",
       type: "upload",
       relationTo: "media",
       label: "Icon",
+    },
+    {
+      name: "icon_mask",
+      type: "upload",
+      relationTo: "media",
+      label: "Icon Mask",
+    },
+    {
+      name: "slug",
+      type: "text",
+      required: true,
+      label: "Slug",
+      admin: {
+        position: "sidebar",
+      },
     },
     {
       name: "parent",

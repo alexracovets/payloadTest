@@ -4,7 +4,7 @@ import { ChildrenType } from "@types";
 
 export const MainWrapper = ({ children }: ChildrenType) => {
     return (
-        <main className="grid grid-cols-[52.5rem_auto] flex-grow">
+        <main className="grid grid-cols-[52.5rem_auto] flex-grow overflow-hidden">
             {children}
         </main>
     );

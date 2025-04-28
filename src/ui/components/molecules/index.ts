@@ -20,3 +20,5 @@ export { SidebarBorder } from "./Borders";
 export { TitlePage } from "./TitlePage";
 export { CategoriesListsView } from "./CategoriesListsView";
 export { CategoryList } from "./CategoryList";
+export { CategoryIcon } from "./CategoryIcon";
+export { CategoryGrid } from "./CategoryGrid";

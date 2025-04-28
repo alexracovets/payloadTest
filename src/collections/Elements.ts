@@ -24,15 +24,6 @@ export const Elements: CollectionConfig = {
     },
     fields: [
         {
-            name: "slug",
-            type: "text",
-            required: true,
-            label: "Slug",
-            admin: {
-                position: "sidebar",
-            },
-        },
-        {
             name: "fullSlug",
             type: "text",
             admin: {
@@ -44,6 +35,27 @@ export const Elements: CollectionConfig = {
             type: "text",
             required: true,
             label: "Name",
+        },
+        {
+            name: "subtitle",
+            type: "text",
+            required: true,
+            label: "Subtitle",
+        },
+        {
+            name: "image",
+            type: "upload",
+            relationTo: "media",
+            label: "Image",
+        },
+        {
+            name: "slug",
+            type: "text",
+            required: true,
+            label: "Slug",
+            admin: {
+                position: "sidebar",
+            },
         },
         {
             name: "parent",

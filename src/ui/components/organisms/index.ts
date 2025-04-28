@@ -6,3 +6,4 @@ export { Sidebar } from "./Sidebar";
 export { Content } from "./Content";
 export { Loader } from "./Loader";
 export { CategoriesLists } from "./CategoriesLists";
+export { SectionsTop } from "./SectionsTop";

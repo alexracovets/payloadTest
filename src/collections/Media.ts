@@ -5,7 +5,7 @@ export const Media: CollectionConfig = {
     upload: {
         staticDir: 'media',
         mimeTypes: ['image/*'],
-    },
+    }, 
     fields: [
         {
             name: 'alt',
