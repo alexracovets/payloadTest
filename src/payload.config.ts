@@ -7,7 +7,7 @@ import { buildConfig } from "payload";
 import { fileURLToPath } from "url";
 import sharp from "sharp";
 
-import { Users, Sections, Categories, Elements } from "./collections";
+import { Users, Sections, Categories, Elements, Media } from "./collections";
 
 import { en } from "@payloadcms/translations/languages/en";
 import { uk } from "@payloadcms/translations/languages/uk";
@@ -25,7 +25,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Sections, Categories, Elements],
+  collections: [Users, Sections, Categories, Elements, Media],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {

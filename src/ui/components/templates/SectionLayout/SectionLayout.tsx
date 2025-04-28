@@ -1,6 +1,6 @@
 "use client";
 
-import { Container} from "@components/atoms";
+import { Container } from "@components/atoms";
 import { CategoriesListsView, TitlePage } from "@components/molecules";
 import { CategoriesLists } from "@components/organisms";
 
@@ -13,6 +13,11 @@ interface SectionType {
     id: string;
     name: string;
     fullSlug: string;
+    activeElements: {
+      id: string;
+      name: string;
+      fullSlug: string;
+    }[];
   }[];
 }
 

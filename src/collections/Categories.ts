@@ -46,6 +46,12 @@ export const Categories: CollectionConfig = {
       label: "Name",
     },
     {
+      name: "icon",
+      type: "upload",
+      relationTo: "media",
+      label: "Icon",
+    },
+    {
       name: "parent",
       type: "relationship",
       relationTo: "sections" as CollectionSlug,

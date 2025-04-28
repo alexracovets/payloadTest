@@ -4,7 +4,7 @@ import { Roboto_Condensed, Roboto, Rethink_Sans } from "next/font/google";
 import localFont from "next/font/local";
 
 export const roboto_condensed = Roboto_Condensed({
-    weight: ["500", "600"],
+    weight: ["400", "500", "600"],
     variable: "--font-roboto_condensed",
     style: ["normal"],
     subsets: ["cyrillic"],
