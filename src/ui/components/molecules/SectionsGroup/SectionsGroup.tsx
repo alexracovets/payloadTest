@@ -18,12 +18,12 @@ export const SectionsGroup = () => {
         onMouseLeave={() => setDashActive(currentSection)}
         className="flex justify-center items-center gap-x-[8rem]"
       >
-        {sections.map((section) => {
+        {sections.map((section, idx) => {
           return (
             <SectionLink
               key={section.id}
-              route={`/pda/${section.link}`}
-              id={section.link}
+              route={`/pda/${section.fullSlug}`}
+              id={idx}
               name={section.name}
               currentSection={currentSection}
               setDashActive={setDashActive}

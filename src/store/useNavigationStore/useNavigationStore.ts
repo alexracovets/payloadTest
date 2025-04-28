@@ -2,15 +2,15 @@ import { create } from "zustand";
 import { immer } from "zustand/middleware/immer";
 
 interface SectionType {
-  id: string;
+  id: number;
   name: string;
-  link: string;
+  fullSlug: string;
 }
 
 interface CategoryType {
-  id: string;
+  id: number;
   name: string;
-  link: string;
+  fullSlug: string;
 }
 
 interface NavigationStoreType {

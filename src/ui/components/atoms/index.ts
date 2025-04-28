@@ -1,4 +1,15 @@
-export { HomeLogo, Text, HomeVideo, Button, AtomImage, Input } from "./shared";
+export {
+  HomeLogo,
+  Text,
+  HomeVideo,
+  Button,
+  AtomImage,
+  Input, LineDash,
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent
+} from "./shared";
 export {
   MainWrapper,
   SidebarWrapper,

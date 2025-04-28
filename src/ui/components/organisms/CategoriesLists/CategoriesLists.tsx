@@ -5,20 +5,22 @@ import { CategoryList } from "@components/molecules";
 interface CategoriesListsProps {
   lists: {
     name: string;
-    link: string;
-    pages: {
+    fullSlug: string;
+    activeElements: {
       name: string;
-      link: string;
+      fullSlug: string;
     }[];
   }[];
 }
 
 export const CategoriesLists = ({ lists }: CategoriesListsProps) => {
   return (
-    <div>
-      {lists.map((list, idx) => (
-        <CategoryList key={idx} list={list} />
-      ))}
+    <div className="mt-[48px] flex justify-between items-start w-full">
+      {lists.map((list, idx) => {
+        return (
+          <CategoryList key={idx} list={list} />
+        )
+      })}
     </div>
   );
 };

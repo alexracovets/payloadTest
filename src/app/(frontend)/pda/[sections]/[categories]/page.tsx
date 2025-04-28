@@ -21,7 +21,6 @@ export default function Categories({ params }: PageProps) {
   useEffect(() => {
     const fetchSection = async () => {
       const { sections, categories } = await params;
-      console.log(sections, categories)
       const res = await fetch(
         `/api/categories?where[fullSlug][equals]=${sections}/${categories}`
       );

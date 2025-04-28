@@ -1,4 +1,4 @@
-import { Text } from "@components/atoms";
+import { Text, LineDash } from "@components/atoms";
 
 interface TitlePageProps {
   title: string;
@@ -14,6 +14,7 @@ export const TitlePage = ({ title, subtitle }: TitlePageProps) => {
       <Text variant="pageSubTitle" asChild="h2">
         {subtitle}
       </Text>
+      <LineDash />
     </div>
   );
 };

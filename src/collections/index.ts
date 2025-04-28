@@ -1,6 +1,4 @@
-import { Sections } from "./Sections";
-import { Categories } from "./Categories";
-
-export { Sections, Categories };
-
+export { Sections } from "./Sections";
+export { Categories } from "./Categories";
+export { Elements } from "./Elements";
 export { Users } from "./Users";

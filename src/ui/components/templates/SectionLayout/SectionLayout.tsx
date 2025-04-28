@@ -1,6 +1,6 @@
 "use client";
 
-import { Container } from "@components/atoms";
+import { Container} from "@components/atoms";
 import { CategoriesListsView, TitlePage } from "@components/molecules";
 import { CategoriesLists } from "@components/organisms";
 
@@ -9,10 +9,10 @@ interface SectionType {
   name: string;
   link: string;
   subtitle: string;
-  categories: {
+  activeCategories: {
     id: string;
     name: string;
-    link: string;
+    fullSlug: string;
   }[];
 }
 
@@ -23,11 +23,7 @@ export const SectionLayout = ({ data }: { data: SectionType }) => {
         <TitlePage title={data.name} subtitle={data.subtitle} />
         <CategoriesListsView />
       </div>
-      <CategoriesLists lists={data.categories.map(category => ({
-        name: category.name,
-        link: category.link,
-        pages: []
-      }))} />
+      <CategoriesLists lists={data.activeCategories} />
     </Container>
   );
 };

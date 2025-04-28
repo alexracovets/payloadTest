@@ -12,6 +12,7 @@
   --color-border: #403e3c;
   --color-dark_white: #7b7b7a;
   --color-light_gray: #ebeae8;
+  --color-dark_gray: #2A2A29;
   --color-gray: #1d1d1d;
   --color-light_black: #1d1c1a;
   --color-light_white: #a8a3a0;
@@ -27,14 +28,12 @@
 }
 
 .bg-custom-gradient {
-  background: linear-gradient(
-    to top,
-    #898883,
-    #bfbfba,
-    #c9c2b2,
-    #bfbfba,
-    #898883
-  );
+  background: linear-gradient(to top,
+      #898883,
+      #bfbfba,
+      #c9c2b2,
+      #bfbfba,
+      #898883);
 }
 
 .bg-custom-gradient_second {

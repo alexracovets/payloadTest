@@ -1,5 +1,6 @@
 "use client";
 
+import { SectionLayout } from "@components/templates";
 import { useEffect, useState } from "react";
 
 interface SectionType {
@@ -7,8 +8,7 @@ interface SectionType {
   fullSlug: string;
   name: string;
   subtitle: string;
-  updatedAt: string;
-  createdAt: string;
+  activeCategories: string[];
 }
 
 interface PageProps {
@@ -38,10 +38,9 @@ export default function Sections({ params }: PageProps) {
   if (!section) return <div>Завантаження...</div>;
 
   return (
-    <div>
-      <h1>{section.name}</h1>
-      <p>{section.subtitle}</p>
-      <small>Оновлено: {new Date(section.updatedAt).toLocaleString()}</small>
-    </div>
+    <>
+      {section && <SectionLayout data={section} />}
+    </>
+
   );
 }

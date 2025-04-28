@@ -7,10 +7,10 @@ import { Text } from "@components/atoms";
 
 export interface SectionLinkType {
   route: string;
-  id: string;
+  id: number;
   name: string;
-  currentSection: string | null;
-  setDashActive: (section: string | null) => void;
+  currentSection: number | null;
+  setDashActive: (section: number | null) => void;
 }
 
 export const SectionLink = memo(
@@ -18,7 +18,7 @@ export const SectionLink = memo(
     return (
       <li>
         <Link
-          id={id}
+          id={id.toString()}
           href={route}
           onMouseEnter={() => setDashActive(id)}
           prefetch={true}

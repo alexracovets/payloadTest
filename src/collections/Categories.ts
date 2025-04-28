@@ -5,7 +5,7 @@ import {
   type Payload,
   type TypeWithID,
 } from "payload";
-import config from "../payload.config";
+import config from "@payload-config";
 
 type Section = TypeWithID & {
   fullSlug: string;
@@ -51,6 +51,16 @@ export const Categories: CollectionConfig = {
       relationTo: "sections" as CollectionSlug,
       label: "Section",
       hasMany: false,
+      admin: {
+        position: "sidebar",
+      },
+    },
+    {
+      name: "activeElements",
+      type: "relationship",
+      relationTo: "elements" as CollectionSlug,
+      label: "Active elements",
+      hasMany: true,
       admin: {
         position: "sidebar",
       },
