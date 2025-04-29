@@ -16,7 +16,7 @@ export const Timer = () => {
         {currentTime}
       </Text>
       <AtomImage
-        className="w-[1.6rem] h-[1.6rem]"
+        className="w-[1.6rem] h-[1.6rem] select-none pointer-events-none"
         src="/svg/battery.svg"
         alt="Battery"
         fill

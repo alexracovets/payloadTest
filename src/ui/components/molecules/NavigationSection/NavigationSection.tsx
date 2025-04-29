@@ -13,7 +13,7 @@ export const NavigationSection = () => {
           sizes="100%"
           priority
           fill
-          className="w-[41rem] h-[8.8rem]"
+          className="w-[41rem] h-[8.8rem] select-none pointer-events-none"
         />
       </div>
       <div className="absolute right-0 top-0 pointer-events-none">
@@ -23,7 +23,7 @@ export const NavigationSection = () => {
           sizes="100%"
           priority
           fill
-          className="w-[41rem] h-[8.8rem]"
+          className="w-[41rem] h-[8.8rem] select-none pointer-events-none"
         />
       </div>
       <ButtonKeyUp action="prev-section">Q</ButtonKeyUp>
