@@ -1,14 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
-interface ElementType {
-  id: number;
-  fullSlug: string;
-  name: string;
-  updatedAt: string;
-  createdAt: string;
-}
+import { ElementType } from "@types";
 
 interface PageProps {
   params: Promise<{ sections: string; categories: string; elements: string }>;

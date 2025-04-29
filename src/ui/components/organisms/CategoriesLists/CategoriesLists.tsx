@@ -2,31 +2,9 @@
 
 import { CategoryList, CategoryGrid } from "@components/molecules";
 import { useElementsView } from "@store";
+import { CategoryType } from "@types";
 
-interface CategoriesListsProps {
-  lists: {
-    name: string;
-    fullSlug: string;
-    icon: {
-      url: string;
-      alt: string;
-    };
-    icon_mask: {
-      url: string;
-      alt: string;
-    };
-    activeElements: {
-      name: string;
-      fullSlug: string;
-      image: {
-        url: string;
-        alt: string;
-      };
-    }[];
-  }[];
-}
-
-export const CategoriesLists = ({ lists }: CategoriesListsProps) => {
+export const CategoriesLists = ({ lists }: { lists: CategoryType[] }) => {
   const { isList } = useElementsView();
   return (
     <div className="mt-[48px] flex justify-between items-start w-full gap-x-[48px]">

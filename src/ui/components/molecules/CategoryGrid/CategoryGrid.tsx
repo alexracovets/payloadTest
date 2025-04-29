@@ -4,31 +4,10 @@ import { CategoryIcon } from "@components/molecules";
 import Link from "next/link";
 import { cn } from "@utils";
 import { AtomImage, Text } from "../../atoms";
+import { CategoryType } from "@types";
 
-interface CategoryGridProps {
-    list: {
-        name: string;
-        fullSlug: string;
-        icon: {
-            url: string;
-            alt: string;
-        };
-        icon_mask: {
-            url: string;
-            alt: string;
-        };
-        activeElements: {
-            name: string;
-            fullSlug: string;
-            image: {
-                url: string;
-                alt: string;
-            };
-        }[];
-    };
-}
 
-export const CategoryGrid = ({ list }: CategoryGridProps) => {
+export const CategoryGrid = ({ list }: { list: CategoryType }) => {
     return (
         <div className="flex flex-col gap-y-[56px] w-full">
             <Link

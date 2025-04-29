@@ -1,15 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { CategoryLayout } from "@components/templates";
+import { CategoryType } from "@types";
 
-interface CategoryType {
-  id: number;
-  fullSlug: string;
-  name: string;
-  subtitle: string;
-  updatedAt: string;
-  createdAt: string;
-}
+ 
 
 interface PageProps {
   params: Promise<{ sections: string; categories: string }>;
@@ -37,10 +32,6 @@ export default function Categories({ params }: PageProps) {
   if (!section) return <div>Завантаження...</div>;
 
   return (
-    <div>
-      <h1>{section.name}</h1>
-      <p>{section.subtitle}</p>
-      <small>Оновлено: {new Date(section.updatedAt).toLocaleString()}</small>
-    </div>
+    <CategoryLayout data={section} />
   );
 }
