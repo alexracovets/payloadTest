@@ -8,7 +8,8 @@ export {
   Accordion,
   AccordionItem,
   AccordionTrigger,
-  AccordionContent
+  AccordionContent,
+  AtomLink
 } from "./shared";
 export {
   MainWrapper,
@@ -18,4 +19,5 @@ export {
   HeaderTopWrapper,
   NavigationWrapper,
   Container,
+  CategoryIcon
 } from "./inteface";

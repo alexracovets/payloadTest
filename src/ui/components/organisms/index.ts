@@ -4,6 +4,5 @@ export { Footer } from "./Footer";
 export { Main } from "./Main";
 export { Sidebar } from "./Sidebar";
 export { Content } from "./Content";
-export { Loader } from "./Loader";
-export { CategoriesLists } from "./CategoriesLists";
+export { Loader } from "./Loader"; 
 export { SectionsTop } from "./SectionsTop";

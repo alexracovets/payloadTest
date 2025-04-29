@@ -1,1 +1,0 @@
-export { CategoriesListsView } from "./CategoriesListsView";

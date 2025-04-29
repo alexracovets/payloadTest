@@ -1,1 +1,0 @@
-export { ArtefactsIco } from './ArtefactsIco';

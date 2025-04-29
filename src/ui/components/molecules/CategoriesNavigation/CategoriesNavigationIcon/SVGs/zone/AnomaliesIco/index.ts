@@ -1,1 +1,0 @@
-export { AnomaliesIco } from './AnomaliesIco';

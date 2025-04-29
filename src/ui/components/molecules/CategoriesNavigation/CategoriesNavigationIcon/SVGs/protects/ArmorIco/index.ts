@@ -1,1 +1,0 @@
-export { ArmorIco } from './ArmorIco';

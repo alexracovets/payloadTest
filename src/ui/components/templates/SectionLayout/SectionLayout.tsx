@@ -1,6 +1,7 @@
 "use client";
 
-import { SectionsTop, CategoriesLists } from "@components/organisms";
+import { SectionsTop } from "@components/organisms";
+import { CategoriesSortView } from "@components/molecules";
 import { Container } from "@components/atoms";
 import { SectionType } from "@types";
 
@@ -8,7 +9,7 @@ export const SectionLayout = ({ data }: { data: SectionType }) => {
   return (
     <Container>
       <SectionsTop name={data.name} subtitle={data.subtitle} />
-      <CategoriesLists lists={data.activeCategories} />
+      <CategoriesSortView categories={data.activeCategories} />
     </Container>
   );
 };

@@ -1,1 +1,0 @@
-export { KitsIco } from "./KitsIco";

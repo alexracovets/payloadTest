@@ -1,1 +1,0 @@
-export { СompositeIcon } from "./СompositeIcon";

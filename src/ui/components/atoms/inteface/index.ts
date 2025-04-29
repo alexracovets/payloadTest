@@ -5,3 +5,4 @@ export { HeaderWrapper } from "./HeaderWrapper";
 export { HeaderTopWrapper } from "./HeaderTopWrapper";
 export { NavigationWrapper } from "./NavigationWrapper";
 export { Container } from "./Cantainer";
+export { CategoryIcon } from "./CategoryIcon";

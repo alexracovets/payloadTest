@@ -1,6 +1,6 @@
 "use client";
 
-import { CategoriesListsView } from "@components/molecules";
+import { CategoriesViewSwitch } from "@components/molecules";
 import { TitlePage } from "@components/molecules";
 
 interface SectionTopProps {
@@ -12,7 +12,7 @@ export const SectionsTop = ({ name, subtitle }: SectionTopProps) => {
     return (
         <div className="flex justify-between items-center" >
             <TitlePage title={name} subtitle={subtitle} className="min-w-[50%]" />
-            <CategoriesListsView />
+            <CategoriesViewSwitch />
         </div>
     )
 }

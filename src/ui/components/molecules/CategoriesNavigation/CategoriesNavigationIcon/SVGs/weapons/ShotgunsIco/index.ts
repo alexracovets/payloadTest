@@ -1,1 +1,0 @@
-export { ShotgunsIco } from "./ShotgunsIco";

@@ -1,1 +1,0 @@
-export { MaskIco } from "./MaskIco";

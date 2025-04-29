@@ -1,1 +1,0 @@
-export { ModsIco } from "./ModsIco";

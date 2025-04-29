@@ -1,0 +1,1 @@
+export { CategoryGridItem } from "./CategoryGridItem";
