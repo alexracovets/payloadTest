@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { CategoryLayout } from "@components/templates";
 import { CategoryType } from "@types";
 
- 
+
 
 interface PageProps {
   params: Promise<{ sections: string; categories: string }>;
@@ -31,7 +31,5 @@ export default function Categories({ params }: PageProps) {
 
   if (!section) return <div>Завантаження...</div>;
 
-  return (
-    <CategoryLayout data={section} />
-  );
+  return <CategoryLayout data={section} />;
 }

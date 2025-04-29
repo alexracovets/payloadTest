@@ -30,9 +30,5 @@ export default function Sections({ params }: PageProps) {
 
   if (!section) return <div>Завантаження...</div>;
 
-  return (
-    <>
-      {section && <SectionLayout data={section} />}
-    </>
-  );
+  return <SectionLayout data={section} />;
 }

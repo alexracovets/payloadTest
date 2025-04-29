@@ -7,7 +7,7 @@ import { buildConfig } from "payload";
 import { fileURLToPath } from "url";
 import sharp from "sharp";
 
-import { Users, Sections, Categories, Elements, Media } from "./collections";
+import { Users, Sections, Categories, Elements, Media } from "@collections";
 
 import { en } from "@payloadcms/translations/languages/en";
 import { uk } from "@payloadcms/translations/languages/uk";

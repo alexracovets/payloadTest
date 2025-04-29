@@ -43,6 +43,9 @@ const textVariants = cva("font-montserrat", {
       elementGrid: cn(
         "text-center text-[20px] font-roboto text-light_white font-[500] underline"
       ),
+      description: cn(
+        "text-[20px] font-roboto text-light_white"
+      ),
     },
   },
   defaultVariants: {

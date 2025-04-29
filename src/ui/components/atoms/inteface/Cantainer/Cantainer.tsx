@@ -1,7 +1,13 @@
 "use client";
 
 import { ChildrenType } from "@/types";
+import { cn } from "@/utils/cn";
 
-export const Container = ({ children }: ChildrenType) => {
-  return <div className="w-full h-full">{children}</div>;
+interface ContainerProps {
+  children: ChildrenType["children"];
+  className?: string;
+}
+
+export const Container = ({ children, className }: ContainerProps) => {
+  return <div className={cn("w-full h-full", className)}>{children}</div>;
 };

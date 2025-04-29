@@ -31,7 +31,8 @@
       "@components/molecules": ["./src/ui/components/molecules"],
       "@components/organisms": ["./src/ui/components/organisms"],
       "@components/templates": ["./src/ui/components/templates"],
-      "@payload-config": ["./src/payload.config.ts"]
+      "@payload-config": ["./src/payload.config.ts"],
+      "@collections": ["./src/collections"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

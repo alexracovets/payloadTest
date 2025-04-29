@@ -5,11 +5,12 @@ interface TitlePageProps {
   title: string;
   subtitle?: string;
   className?: string;
+  short?: boolean;
 }
 
-export const TitlePage = ({ title, subtitle, className }: TitlePageProps) => {
+export const TitlePage = ({ title, subtitle, short, className }: TitlePageProps) => {
   return (
-    <div className={cn("flex flex-col gap-y-[2px]", className)}>
+    <div className={cn("flex flex-col gap-y-[2px] mb-[48px]", className)}>
       <Text variant="pageTitle" asChild="h1">
         {title}
       </Text>
@@ -18,7 +19,7 @@ export const TitlePage = ({ title, subtitle, className }: TitlePageProps) => {
           {subtitle}
         </Text>
       )}
-      <LineDash />
+      <LineDash short={short} />
     </div>
   );
 };

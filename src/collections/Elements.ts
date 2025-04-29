@@ -6,6 +6,7 @@ import {
     type TypeWithID,
 } from "payload";
 import config from "@payload-config";
+import { Armor } from "./Fields/Armor";
 
 type Elements = TypeWithID & {
     fullSlug: string;
@@ -27,6 +28,38 @@ export const Elements: CollectionConfig = {
     },
     fields: [
         {
+            name: "pageType",
+            type: "select",
+            required: true,
+            label: "Тип сторінки",
+            options: [
+                "armor",
+                "mask",
+                "exoskeleton",
+                "medkit",
+                "pistol",
+                "automatic",
+                "shotgun",
+                "sniper",
+                "machinegun",
+                "attachments",
+                "ammo",
+                "location",
+                "anomaly",
+                "artifact",
+                "mutant",
+                "echoLocation",
+                "group",
+                "character",
+                "questChoice",
+                "joke",
+                "lifehack",
+                "mainQuest",
+                "sideQuest",
+                "other",
+            ],
+        },
+        {
             name: "fullSlug",
             type: "text",
             admin: {
@@ -38,18 +71,6 @@ export const Elements: CollectionConfig = {
             type: "text",
             required: true,
             label: "Name",
-        },
-        {
-            name: "subtitle",
-            type: "text",
-            required: true,
-            label: "Subtitle",
-        },
-        {
-            name: "image",
-            type: "upload",
-            relationTo: "media",
-            label: "Image",
         },
         {
             name: "slug",
@@ -70,6 +91,7 @@ export const Elements: CollectionConfig = {
                 position: "sidebar",
             },
         },
+        ...Armor(),
     ],
     hooks: {
         beforeChange: [
