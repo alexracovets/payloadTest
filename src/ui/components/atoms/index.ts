@@ -19,5 +19,7 @@ export {
   HeaderTopWrapper,
   NavigationWrapper,
   Container,
-  CategoryIcon
+  CategoryIcon,
+  DescriptionPage,
+  TableRowResistance
 } from "./inteface";

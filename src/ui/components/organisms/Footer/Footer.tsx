@@ -4,7 +4,7 @@ import { AtomImage } from "@components/atoms";
 
 export const Footer = () => {
   return (
-    <footer className="relative w-full flex justify-start items-center gap-x-[27.8rem] p-[1rem]">
+    <footer className="relative w-full flex justify-start items-center gap-x-[27.8rem] p-[1rem] min-h-[8.9dvh]">
       <div className="absolute left-0 top-0 w-full h-[.8rem]">
         <AtomImage
           src="/pda/horizontal_center.jpg"

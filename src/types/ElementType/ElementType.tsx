@@ -14,5 +14,13 @@ export interface ElementType {
     image: MediaType;
     updatedAt: string;
     createdAt: string;
+    resistances: {
+        thermal: number;
+        electric: number;
+        chemical: number;
+        radiation: number;
+        psy: number;
+        physical: number; 
+    }
 }
 

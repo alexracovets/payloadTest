@@ -9,7 +9,9 @@
   --font-roboto: "Roboto", sans-serif;
 
   --color-black: #11100e;
+  --color-black_dark: #282828;
   --color-border: #403e3c;
+  --color-border-secondary: #100F0E;
   --color-dark_white: #7b7b7a;
   --color-light_gray: #ebeae8;
   --color-dark_gray: #2A2A29;
@@ -24,6 +26,8 @@
   --color-toxic: #e6981c;
   --color-toxic-light: #323231;
   --color-toxic_secondary: #C9A91D;
+  --color-gold: #BE7912;
+  --color-dark_orange: #714D19
 }
 
 .clip_startBtn {

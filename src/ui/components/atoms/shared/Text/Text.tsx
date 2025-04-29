@@ -46,6 +46,9 @@ const textVariants = cva("font-montserrat", {
       description: cn(
         "text-[20px] font-roboto text-light_white"
       ),
+      resistance: cn(
+        "text-[16px] font-roboto text-warm-sand"
+      ),
     },
   },
   defaultVariants: {

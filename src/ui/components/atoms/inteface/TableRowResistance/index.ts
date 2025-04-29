@@ -1,0 +1,1 @@
+export { TableRowResistance } from "./TableRowResistance";
