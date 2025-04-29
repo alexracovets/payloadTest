@@ -21,5 +21,6 @@ export {
   Container,
   CategoryIcon,
   DescriptionPage,
-  TableRowResistance
+  TableRowResistance,
+  TableRowInfo
 } from "./inteface";

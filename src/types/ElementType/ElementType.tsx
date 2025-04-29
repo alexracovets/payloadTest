@@ -20,7 +20,12 @@ export interface ElementType {
         chemical: number;
         radiation: number;
         psy: number;
-        physical: number; 
+        physical: number;
+    },
+    info: {
+        weight: number;
+        artifact_slots: number;
+        price: number;
     }
 }
 

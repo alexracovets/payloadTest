@@ -1,6 +1,6 @@
 "use client";
 
-import { Container, DescriptionPage, AtomImage, Text, TableRowResistance } from "@components/atoms";
+import { Container, DescriptionPage, AtomImage, TableRowResistance, TableRowInfo } from "@components/atoms";
 import { TitlePage } from "@components/molecules";
 import { ElementType } from "@types";
 
@@ -20,13 +20,18 @@ export const ArmorLayout = ({ data }: { data: ElementType }) => {
                         <TableRowResistance image={"/svg/physical.svg"} name={"Фізичний"} value={data.resistances.physical} />
                     </div>
                 </div>
-                <div>
+                <div className="flex flex-col gap-y-[56px]">
                     <AtomImage
                         src={data.image.url}
                         alt={data.image.alt}
                         fill
                         className="w-[388px] h-[388px] mt-[-48px]"
                     />
+                    <div>
+                        <TableRowInfo name={"Вага"} value={`${data.info.weight} кг`} image={"/svg/weight.svg"} />
+                        <TableRowInfo name={"Слоти для Артефактів"} value={data.info.artifact_slots} image={"/svg/artifacts_slots.svg"} />
+                        <TableRowInfo name={"Купони"} value={data.info.price.toLocaleString('uk-UA')} image={"/svg/kupon.svg"} />
+                    </div>
                 </div>
             </div>
 

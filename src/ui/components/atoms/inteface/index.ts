@@ -8,3 +8,4 @@ export { Container } from "./Cantainer";
 export { CategoryIcon } from "./CategoryIcon";
 export { DescriptionPage } from "./DescriptionPage";
 export { TableRowResistance } from "./TableRowResistance";
+export { TableRowInfo } from "./TableRowInfo";
