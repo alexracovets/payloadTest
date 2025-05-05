@@ -27,5 +27,9 @@ export interface ElementType {
         artifact_slots: number;
         price: number;
     }
+    info_mask: {
+        weight: number;
+        price: number;
+    }
 }
 

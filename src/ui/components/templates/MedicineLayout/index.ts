@@ -1,0 +1,1 @@
+export { MedicineLayout } from "./MedicineLayout";

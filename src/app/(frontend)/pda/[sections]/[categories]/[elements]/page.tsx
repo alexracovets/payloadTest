@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-import { ArmorLayout } from "@components/templates";
+import { ArmorLayout, MedicineLayout } from "@components/templates";
 import { ElementType } from "@types";
 
 interface PageProps {
@@ -32,7 +32,12 @@ export default function Elements({ params }: PageProps) {
 
   return (
     <>
-      {element.pageType === "armor" && <ArmorLayout data={element} />}
+      {
+        element.pageType === "armors" || element.pageType === "masks" && <ArmorLayout data={element} />
+      }
+      {
+        element.pageType === "medicines" && <MedicineLayout data={element} />
+      }
     </>
   );
 }

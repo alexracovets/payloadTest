@@ -6,7 +6,8 @@ import {
     type TypeWithID,
 } from "payload";
 import config from "@payload-config";
-import { Armor } from "./Fields/Armor";
+
+import { Armors, Masks, Medicines } from "./Fields";
 
 type Elements = TypeWithID & {
     fullSlug: string;
@@ -33,30 +34,10 @@ export const Elements: CollectionConfig = {
             required: true,
             label: "Тип сторінки",
             options: [
-                "armor",
-                "mask",
-                "exoskeleton",
-                "medkit",
-                "pistol",
-                "automatic",
-                "shotgun",
-                "sniper",
-                "machinegun",
-                "attachments",
-                "ammo",
-                "location",
-                "anomaly",
-                "artifact",
-                "mutant",
-                "echoLocation",
-                "group",
-                "character",
-                "questChoice",
-                "joke",
-                "lifehack",
-                "mainQuest",
-                "sideQuest",
-                "other",
+                "armors",
+                "masks",
+                "exoskeletons",
+                "medicines",
             ],
         },
         {
@@ -73,6 +54,29 @@ export const Elements: CollectionConfig = {
             label: "Name",
         },
         {
+            name: "subtitle",
+            type: "text",
+            required: true,
+            label: "Subtitle",
+        },
+        {
+            name: 'description',
+            label: 'Description',
+            type: 'array',
+            labels: {
+                singular: 'Paragraph',
+                plural: 'Paragraphs',
+            },
+            fields: [
+                {
+                    name: 'text',
+                    label: 'Текст',
+                    type: 'textarea',
+                    required: true,
+                }
+            ]
+        },
+        {
             name: "slug",
             type: "text",
             required: true,
@@ -80,6 +84,15 @@ export const Elements: CollectionConfig = {
             admin: {
                 position: "sidebar",
             },
+        },
+        {
+            name: "image",
+            type: "upload",
+            relationTo: "media",
+            label: "Image",
+            admin: {
+                position: "sidebar",
+            }
         },
         {
             name: "parent",
@@ -91,7 +104,67 @@ export const Elements: CollectionConfig = {
                 position: "sidebar",
             },
         },
-        ...Armor(),
+        {
+            name: 'resistances',
+            label: 'Resistances',
+            type: 'group',
+            fields: [
+                {
+                    name: 'thermal',
+                    label: 'Тепловий',
+                    type: 'number',
+                    min: 0,
+                    max: 5,
+                    defaultValue: 0
+                },
+                {
+                    name: 'electric',
+                    label: 'Електричний',
+                    type: 'number',
+                    min: 0,
+                    max: 5,
+                    defaultValue: 0
+                },
+                {
+                    name: 'chemical',
+                    label: 'Хімічний',
+                    type: 'number',
+                    min: 0,
+                    max: 5,
+                    defaultValue: 0
+                },
+                {
+                    name: 'radiation',
+                    label: 'Радіаційний',
+                    type: 'number',
+                    min: 0,
+                    max: 5,
+                    defaultValue: 0
+                },
+                {
+                    name: 'psy',
+                    label: 'Псі',
+                    type: 'number',
+                    min: 0,
+                    max: 5,
+                    defaultValue: 0
+                },
+                {
+                    name: 'physical',
+                    label: 'Фізичний',
+                    type: 'number',
+                    min: 0,
+                    max: 5,
+                    defaultValue: 0
+                }
+            ],
+            admin: {
+                condition: (data: any) => data.pageType !== "medicines",
+            }
+        },
+        ...Armors(),
+        ...Masks(),
+        ...Medicines(),
     ],
     hooks: {
         beforeChange: [

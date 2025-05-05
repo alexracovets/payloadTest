@@ -28,13 +28,21 @@ export const ArmorLayout = ({ data }: { data: ElementType }) => {
                         className="w-[388px] h-[388px] mt-[-48px]"
                     />
                     <div>
-                        <TableRowInfo name={"Вага"} value={`${data.info.weight} кг`} image={"/svg/weight.svg"} />
-                        <TableRowInfo name={"Слоти для Артефактів"} value={data.info.artifact_slots} image={"/svg/artifacts_slots.svg"} />
-                        <TableRowInfo name={"Купони"} value={data.info.price.toLocaleString('uk-UA')} image={"/svg/kupon.svg"} />
+                        {
+                            data.pageType === "masks" ?
+                                <>
+                                    <TableRowInfo name={"Вага"} value={`${data.info_mask.weight} кг`} image={"/svg/weight.svg"} />
+                                    <TableRowInfo name={"Купони"} value={data.info_mask.price.toLocaleString('uk-UA')} image={"/svg/kupon.svg"} />
+                                </> :
+                                <>
+                                    <TableRowInfo name={"Вага"} value={`${data.info.weight} кг`} image={"/svg/weight.svg"} />
+                                    <TableRowInfo name={"Слоти для Артефактів"} value={data.info.artifact_slots} image={"/svg/artifacts_slots.svg"} />
+                                    <TableRowInfo name={"Купони"} value={data.info.price.toLocaleString('uk-UA')} image={"/svg/kupon.svg"} />
+                                </>
+                        }
                     </div>
                 </div>
             </div>
-
         </Container>
     )
 }
