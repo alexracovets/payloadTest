@@ -30,7 +30,7 @@ export const Container = ({ children, className }: ContainerProps) => {
       renderTrackVertical={track}
       hideTracksWhenNotNeeded
     >
-      <div className={cn("w-full h-full py-[16px]", className)}>
+      <div className={cn("w-full h-full py-[16px] pr-[16px]", className)}>
         {children}
       </div>
     </Scrollbars >

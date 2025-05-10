@@ -7,9 +7,7 @@ import { useElementsView } from "@store";
 export const CategoriesViewSwitch = () => {
   const { isList, setIsList } = useElementsView();
   return (
-    <div
-      className="flex rounded-[4px] overflow-hidden"
-    >
+    <div className="flex rounded-[4px] overflow-hidden">
       <button
         type="button"
         onClick={() => setIsList(true)}
