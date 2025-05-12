@@ -1,6 +1,6 @@
-import { Field } from "payload";
+import { CollectionSlug } from "payload";
 
-export const Medicines = (): Field[] => {
+export const Medicines = () => {
     const typePage = "medicines"
 
     return [
@@ -14,14 +14,26 @@ export const Medicines = (): Field[] => {
                     fields: [
                         {
                             name: "parameter",
-                            type: "text",
-                            label: "Параметр",
+                            type: "relationship",
+                            relationTo: "medicines-media" as CollectionSlug,
+                            label: "Type",
+                            admin: {
+                                position: "sidebar",
+                                appearance: "drawer",
+                                description: "Виберіть зображення параметра",
+                                allowCreate: false,
+                            }
                         },
                         {
-                            name: "value",
+                            name: "value_type",
                             type: "text",
                             label: "Значення",
                         },
+                        {
+                            name: "color",
+                            type: "text",
+                            label: "Color",
+                        }
                     ]
                 }
             ],

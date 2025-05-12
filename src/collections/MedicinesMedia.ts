@@ -7,12 +7,16 @@ export const MedicinesMedia: CollectionConfig = {
     },
     upload: {
         staticDir: 'media',
-        mimeTypes: ['image/medicines*'],
+        mimeTypes: ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'image/svg+xml'],
     },
     fields: [
         {
             name: 'alt',
             type: 'text',
+        },
+        {
+            name: "impact",
+            type: "text",
         },
     ],
 }
